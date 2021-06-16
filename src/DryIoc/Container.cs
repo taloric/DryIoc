@@ -14641,9 +14641,9 @@ namespace System.Reflection
 
         public Assembly Assembly => _type.Assembly;
 
-        public MethodInfo GetDeclaredMethod(string name) => _type.GetMethod(name);
-        public PropertyInfo GetDeclaredProperty(string name) => _type.GetProperty(name);
-        public FieldInfo GetDeclaredField(string name) => _type.GetField(name);
+        public MethodInfo GetDeclaredMethod(string name) => _type.GetMethod(name, ALL_DECLARED);
+        public PropertyInfo GetDeclaredProperty(string name) => _type.GetProperty(name, ALL_DECLARED);
+        public FieldInfo GetDeclaredField(string name) => _type.GetField(name, ALL_DECLARED);
 
         public IEnumerable<ConstructorInfo> DeclaredConstructors =>
             _type.GetConstructors(ALL_DECLARED ^ BindingFlags.Static);
